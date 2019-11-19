@@ -144,7 +144,6 @@ def get_collisions(graph, agents, goals):
             path = dijk.dijkstra(graph, agents[goals.index(goal_collection)], goal)
             paths.append(path)
         path_collection.append(paths)
-    # TODO: Fix the bug that is in here somewhere (if there even is :( )
     for agent_paths in path_collection:
         for other_agent_paths in path_collection:
             if agent_paths != other_agent_paths:
@@ -260,28 +259,3 @@ def graph_print(graph):
     output = output[0:len(output)-2]
     output += "}"
     return output
-
-
-"""
-grid = generate_grid(3, 3)
-agent_pos = (8, 0)
-goals = ({0, 2}, {8, 1})
-real_goals = (2, 1)
-paths = generate_paths(grid, agent_pos, goals)
-print(f"GOALS:{goals}")
-
-
-grid = generate_grid(3, 3)
-agent_pos = (1, 0)
-goals = ({1, 6}, {2, 3})
-real_goals = (1, 3)
-paths = generate_paths(grid, agent_pos, goals)
-
-
-print("BEFORE:")
-print(graph_print(grid))
-reduce_not_used_vertices(grid, paths)
-reduce_not_used_escapes(grid, paths)
-print("AFTER:")
-print(graph_print(grid))
-"""
