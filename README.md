@@ -35,3 +35,24 @@ After you initialized the agents you can simply use **_Solver.solve_** to make t
  ```python
 solve(agents=agents, max_rounds=100, verbosity=False)
 ```
+
+## Generating a random problem instance
+Let us look at the randomly generated problem instances **_GraphGenerator_**. The funciton **_generate\_problem\_instance(n, m, agent\_amount, lower\_goal\_amount, upper\_goal\_amount)_** will geneate n X m graph, then it will place the agents and goals randomly on the graph.The agent amount defines how many agents the problem instance will have. The amount of goals per agents can be adjusted using the **_lower\_goal\_amount_** and the **_upper\_goal\_amount_** parameter.
+Here is an example of generating an initialized problem instance.
+ ```python
+from GraphGenerator imort generate_problem_instance as gpi
+from Solver import initialize
+
+n = 5
+m = 5
+agent_amount = 3
+lower_goal_amount = 2
+upper_goal_amount = 4
+instance = gpi(m, n, agent_amount, lower_goal_amount, upper_goal_amount)
+ agents = initialize(instance)
+```
+From that on, one can solve the given instance, by simply using the solve function again:
+After you initialized the agents you can simply use **_Solver.solve_** to make them try to solve the given instance.
+ ```python
+solve(agents=agents, max_rounds=100, verbosity=False)
+```
