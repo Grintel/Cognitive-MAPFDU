@@ -35,7 +35,7 @@ After you initialized the agents you can simply use **_Solver.solve_** to make t
  ```python
 solve(agents=agents, max_rounds=100, verbosity=False)
 ```
-
+The **_max_rounds_** paramter determines after how many rounds the calculation will be aborted, because, unfortunatenly, infinite executions are possible, although unlikely. If the **_verbosity_** parameter is set to **_True_**. A console output for every agent in every round will be displayed. This can be used to comprehend the agents behavior or simply for debugging purposes.
 ## Generating a random problem instance
 Let us look at the randomly generated problem instances **_GraphGenerator_**. The funciton **_generate\_problem\_instance(n, m, agent\_amount, lower\_goal\_amount, upper\_goal\_amount)_** will geneate n X m graph, then it will place the agents and goals randomly on the graph.The agent amount defines how many agents the problem instance will have. The amount of goals per agents can be adjusted using the **_lower\_goal\_amount_** and the **_upper\_goal\_amount_** parameter.
 Here is an example of generating an initialized problem instance.
